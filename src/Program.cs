@@ -5,6 +5,8 @@ public class Program {
 
   public static void Main() {
     Draw.Setup();
+
+    // Glider
     logicManager.board[1, 0] = true;
     logicManager.board[2, 1] = true;
     logicManager.board[0, 2] = true;
