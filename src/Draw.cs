@@ -4,8 +4,17 @@ namespace ConwaysGameOfLife {
     private static int originalRow;
     private static int originalCol;
 
-    private static char cellOn  = '█';
-    private static char cellOff = ' ';
+    public static void Run(Board board) {
+      Console.Clear();
+
+      for (int x = 0; x < board.width; x++) {
+        for (int y = 0; y < board.height; y++) {
+          if (board[x, y]) {
+            PrintAt(ConsoleColor.White, new Point(x, y));
+          }
+        }
+      }
+    }
 
     public static void Setup() {
       Console.CursorVisible = false;
