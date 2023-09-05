@@ -17,10 +17,10 @@ public class Program {
 
     Draw.Run(logicManager.board);
 
-    Thread.Sleep(500);
+    Thread.Sleep(200);
 
     while(true) {
-      Thread.Sleep(500);
+      Thread.Sleep(200);
 
       logicManager.Run();
 
