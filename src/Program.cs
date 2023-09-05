@@ -15,7 +15,7 @@ public class Program {
 
     Draw.Run(logicManager.board);
 
-    Thread.Sleep(1000);
+    Thread.Sleep(500);
 
     while(true) {
       Thread.Sleep(500);
