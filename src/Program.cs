@@ -1,10 +1,12 @@
 ﻿using ConwaysGameOfLife;
 
 public class Program {
-  public static Logic logicManager = new Logic(40, 40);
+  public static Logic logicManager;
 
   public static void Main() {
     Draw.Setup();
+
+    logicManager = new Logic(Console.WindowWidth, Console.WindowHeight);
 
     // Glider
     logicManager.board[1, 0] = true;
