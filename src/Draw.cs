@@ -1,17 +1,20 @@
 // Imported from TextBasedSnake
 namespace ConwaysGameOfLife {
   public class Draw {
+    //public static readonly char onChar = '█';
+    public static readonly char onChar = '@';
+
     public static void Run(Board board) {
       string output = "";
 
       for (int y = 0; y < board.height - 1; y++) {
         for (int x = 0; x < board.width; x++) {
-          output += board[x, y] ? '@' : ' ';
+          output += board[x, y] ? onChar : ' ';
         }
         output += '\n';
       }
       for (int x = 0; x < board.width; x++) {
-        output += board[x, board.height - 1] ? '@' : ' ';
+        output += board[x, board.height - 1] ? onChar : ' ';
       }
 
       Console.Clear();
