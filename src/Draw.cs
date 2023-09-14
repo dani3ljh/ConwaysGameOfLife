@@ -1,35 +1,31 @@
 // Imported from TextBasedSnake
 namespace ConwaysGameOfLife {
   public class Draw {
-    private static int originalRow;
-    private static int originalCol;
-
     public static void Run(Board board) {
-      Console.Clear();
+      string output = "";
 
-      for (int x = 0; x < board.width; x++) {
-        for (int y = 0; y < board.height; y++) {
-          if (board[x, y]) {
-            PrintAt(ConsoleColor.White, new Point(x, y));
-          }
+      for (int y = 0; y < board.height; y++) {
+        for (int x = 0; x < board.width; x++) {
+          output += board[x, y] ? '@' : ' ';
         }
+        output += '\n';
       }
+
+      Console.Clear();
+      Console.Write(output);
     }
 
     public static void Setup() {
       Console.CursorVisible = false;
 
       Console.Clear();
-
-      originalRow = Console.CursorTop;
-      originalCol = Console.CursorLeft;
       
       Console.CancelKeyPress += new ConsoleCancelEventHandler(OnCtrlCHandler);
     }
 
     private static void PrintAt(ConsoleColor color, Point point){
       try {
-        Console.SetCursorPosition(originalCol + point.x, originalRow + point.y);
+        Console.SetCursorPosition(point.x, point.y);
         Console.BackgroundColor = color;
         Console.Write(" ");
         Console.ResetColor();
