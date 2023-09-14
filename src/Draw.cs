@@ -4,11 +4,14 @@ namespace ConwaysGameOfLife {
     public static void Run(Board board) {
       string output = "";
 
-      for (int y = 0; y < board.height; y++) {
+      for (int y = 0; y < board.height - 1; y++) {
         for (int x = 0; x < board.width; x++) {
           output += board[x, y] ? '@' : ' ';
         }
         output += '\n';
+      }
+      for (int x = 0; x < board.width; x++) {
+        output += board[x, board.height - 1] ? '@' : ' ';
       }
 
       Console.Clear();
