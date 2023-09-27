@@ -7,14 +7,11 @@ namespace ConwaysGameOfLife {
     public static void Run(Board board) {
       string output = "";
 
-      for (int y = 0; y < board.height - 1; y++) {
+      for (int y = 0; y < board.height; y++) {
         for (int x = 0; x < board.width; x++) {
           output += board[x, y] ? onChar : ' ';
         }
-        output += '\n';
-      }
-      for (int x = 0; x < board.width; x++) {
-        output += board[x, board.height - 1] ? onChar : ' ';
+        if (y != board.height - 1) output += '\n';
       }
 
       Console.Clear();
